@@ -1,7 +1,17 @@
+# version: "3.9"
+
+# services:
+#   nextjs-app:
+#     image: rahuldev365/webrtc-app:latest
+#     ports:
+#       - "3000:3000"
 version: "3.9"
 
 services:
   nextjs-app:
-    image: rahuldev365/webrtc-app:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nextjs_app_container
     ports:
       - "3000:3000"
