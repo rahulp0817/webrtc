@@ -5,12 +5,6 @@ pipeline {
     agent {label "worker"}
     
     stages {
-        
-        stage("GitHub Pipline"){
-            steps{
-                echo "This is GitHub Pipeline!"
-            }
-        }
 
         stage("Code"){
             steps{
@@ -19,6 +13,7 @@ pipeline {
                 }
             }
         }
+
         stage("Build"){
             steps{
                 // sh "docker build --no-cache -t webrtc-app:latest ." used first time
@@ -27,11 +22,13 @@ pipeline {
                 }
             }
         }
+
         stage("Test"){
             steps{
                 echo "Testing the code..."
             }
         }
+
         stage("Push to Docker Hub"){
             steps{
                 script{
@@ -39,6 +36,7 @@ pipeline {
                 }
             }
         }
+        
         stage("Deploy"){
             steps{
                 script{
