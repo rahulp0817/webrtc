@@ -8,7 +8,7 @@ pipeline {
         
         stage("GitHub Pipline"){
             steps{
-                echo "This is GitHub Pipeline!"
+                echo "This is GitHub Pipeline"
             }
         }
 
