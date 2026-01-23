@@ -5,6 +5,12 @@ pipeline {
     agent {label "worker"}
     
     stages {
+        
+        stage("GitHub Pipline"){
+            steps{
+                echo "This is GitHub Pipeline"
+            }
+        }
 
         stage("Code"){
             steps{
