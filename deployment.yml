@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webrtc-app-deployment
+  namespace: webrtc-app
+  labels:
+    app: webrtc-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webrtc-app
+  template:
+    metadata:
+      labels:
+        app: webrtc-app
+    spec:
+      containers:
+      - name: webrtc-app
+        image: rahuldev365/webrtc-app
+        ports:
+        - containerPort: 3000
+
